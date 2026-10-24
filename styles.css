@@ -899,78 +899,27 @@ footer .rights {
     font-weight: 700;
 }
 
-/* Responsive layout fixes: tablet and mobile */
+/* Responsive layout: preserve the original HTML classes and image paths */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-html {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
+html,
 body {
-    width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-}
-
-img,
-video,
-svg {
-    max-width: 100%;
 }
 
 img {
-    height: auto;
-}
-
-.first img,
-.second img,
-.third img,
-.team_1 img,
-.car_3 img,
-.driver_2 img,
-.race_1 img,
-.ingred_1 img,
-.ingred_2 img,
-.ingred_3 img,
-.step_1 img,
-.step_2 img,
-.step_3 img,
-.steps_1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.first .image_1,
-.second .image_1,
-.second .image_2,
-.third .image,
-.team_1 .image,
-.car_3 .image,
-.driver_2 .image,
-.race_1 .image,
-.ingred_1 .image,
-.ingred_2 .image,
-.ingred_3 .image,
-.step_1 .image,
-.step_2 .image,
-.step_3 .image,
-.steps_1 .image {
-    min-width: 0;
-    overflow: hidden;
+    max-width: 100%;
 }
 
 header {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 4vw;
-    gap: 18px;
+    gap: 16px;
+    padding-left: clamp(16px, 4vw, 60px);
+    padding-right: clamp(16px, 4vw, 60px);
 }
 
 header nav {
@@ -978,8 +927,7 @@ header nav {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 12px 22px;
-    min-width: 0;
+    gap: 10px 18px;
 }
 
 header .zero_link,
@@ -988,146 +936,30 @@ header .sec_link {
     margin-right: 0;
 }
 
-header nav a {
-    display: inline-block;
-    white-space: nowrap;
-}
-
 .landing,
 .page_1,
 .page_2,
 .page_3,
 .page_4 {
     width: 100%;
-    min-height: 320px;
-    height: calc(100vh - 90px);
-    max-height: 760px;
-    padding: 24px;
+    max-width: 100%;
+    padding: 20px;
     font-size: clamp(30px, 5vw, 60px);
-    overflow-wrap: anywhere;
-}
-
-.first,
-.second,
-.third,
-.team_1,
-.car_3,
-.driver_2,
-.race_1,
-.ingred_1,
-.ingred_2,
-.ingred_3,
-.step_1,
-.step_2,
-.step_3,
-.steps_1 {
-    min-width: 0;
-    gap: 24px;
-}
-
-.first .text_1,
-.first .first_1 .text,
-.second .text,
-.third .text,
-.team_1 .text,
-.car_3 .text,
-.driver_2 .text,
-.race_1 .text,
-.ingred_1 .text,
-.ingred_2 .text,
-.ingred_3 .text,
-.step_1 .text,
-.step_2 .text,
-.step_3 .text,
-.steps_1 .text {
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-.type {
-    width: 100%;
-    height: auto;
-    min-height: 280px;
-    padding: 28px 4vw;
-    gap: 28px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.type .info,
-.type .follow,
-.type .box_three,
-.type .box_three .tit_f,
-.type .box_three div:nth-child(2) {
-    min-width: 0;
-    margin: 0;
-}
-
-.type .info,
-.type .follow {
-    flex: 1 1 220px;
-    overflow-wrap: anywhere;
-}
-
-.type .box_three {
-    flex: 1 1 240px;
-    padding-top: 4px;
-}
-
-.type .box_three div:nth-child(3) {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 8px;
-}
-
-.type .box_three input:nth-child(1) {
-    width: min(100%, 260px);
-    min-width: 0;
-}
-
-.type .box_three input:nth-child(2) {
-    position: static;
-    margin: 0;
-    flex: 0 0 auto;
-}
-
-footer .rights {
-    min-height: 60px;
-    height: auto;
-    padding: 16px;
-    font-size: 14px;
-}
-
-footer .rights p {
-    margin: 0;
+    overflow-wrap: break-word;
 }
 
 @media (max-width: 900px) {
     header {
         height: auto;
-        min-height: 76px;
-        padding: 14px 22px;
+        min-height: 90px;
+        padding-top: 14px;
+        padding-bottom: 14px;
         flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    header .one {
-        margin: 0;
     }
 
     header nav {
         justify-content: center;
-        gap: 10px 18px;
-    }
-
-    .landing,
-    .page_1,
-    .page_2,
-    .page_3,
-    .page_4 {
-        height: 58vh;
-        min-height: 300px;
+        width: 100%;
     }
 
     .first,
@@ -1144,13 +976,116 @@ footer .rights p {
     .step_2,
     .step_3,
     .steps_1 {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 32px 22px;
+        gap: 20px;
     }
 
     .first .text_1,
-    .first .first_1,
+    .first .first_1 .text,
+    .second .text,
+    .third .text,
+    .team_1 .text,
+    .car_3 .text,
+    .driver_2 .text,
+    .race_1 .text,
+    .ingred_1 .text,
+    .ingred_2 .text,
+    .ingred_3 .text,
+    .step_1 .text,
+    .step_2 .text,
+    .step_3 .text,
+    .steps_1 .text {
+        margin-left: 20px;
+        margin-right: 20px;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    .first .image_1,
+    .second .image_1,
+    .second .image_2,
+    .third .image,
+    .team_1 .image,
+    .car_3 .image,
+    .driver_2 .image,
+    .race_1 .image,
+    .ingred_1 .image,
+    .ingred_2 .image,
+    .ingred_3 .image,
+    .step_1 .image,
+    .step_2 .image,
+    .step_3 .image,
+    .steps_1 .image {
+        min-width: 0;
+        max-width: calc(100% - 20px);
+    }
+
+    .type {
+        height: auto;
+        min-height: 0;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        position: sticky;
+        padding-left: 14px;
+        padding-right: 14px;
+        gap: 12px;
+    }
+
+    header .two {
+        font-size: 22px;
+    }
+
+    header nav {
+        gap: 10px 14px;
+    }
+
+    header nav a {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .landing,
+    .page_1,
+    .page_2,
+    .page_3,
+    .page_4 {
+        height: auto;
+        min-height: 55vh;
+        max-height: none;
+        font-size: clamp(28px, 8vw, 42px);
+        padding: 24px 16px;
+        background-position: center;
+    }
+
+    .first,
+    .second,
+    .third,
+    .team_1,
+    .car_3,
+    .driver_2,
+    .race_1,
+    .ingred_1,
+    .ingred_2,
+    .ingred_3,
+    .step_1,
+    .step_2,
+    .step_3,
+    .steps_1 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 16px;
+        padding: 24px 14px;
+    }
+
+    .first .text_1,
     .first .first_1 .text,
     .second .text,
     .third .text,
@@ -1166,9 +1101,29 @@ footer .rights p {
     .step_3 .text,
     .steps_1 .text {
         width: 100%;
-        max-width: 100%;
         margin: 0;
         padding: 0;
+        font-size: 16px;
+        gap: 14px;
+    }
+
+    .first .text_1 div:nth-child(2),
+    .first .first_1 .text .one,
+    .second .text .one,
+    .third .text .one,
+    .team_1 .text .one,
+    .car_3 .text .one,
+    .driver_2 .text .one,
+    .race_1 .text .one,
+    .ingred_1 .text .one,
+    .ingred_2 .text .one,
+    .ingred_3 .text .one,
+    .step_1 .text .one,
+    .step_2 .text .one,
+    .step_3 .text .one,
+    .steps_1 .text .one {
+        font-size: 25px;
+        line-height: 1.25;
     }
 
     .first .image_1,
@@ -1188,169 +1143,62 @@ footer .rights p {
     .steps_1 .image {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
+        height: 240px;
+        min-height: 0;
         margin: 0;
+        padding: 0;
+        overflow: hidden;
     }
 
-    .first .first_1 {
-        display: flex;
-    }
-
-    .first .first_1 .text .two,
-    .second .text .two,
-    .third .text .two,
-    .team_1 .text .two,
-    .car_3 .text .two,
-    .driver_2 .text .two,
-    .race_1 .text .two,
-    .ingred_1 .text .two,
-    .ingred_2 .text .two,
-    .ingred_3 .text .two,
-    .step_1 .text .two,
-    .step_2 .text .two,
-    .step_3 .text .two,
-    .steps_1 .text .two {
-        overflow-wrap: anywhere;
-    }
-
-    .third .text .one {
-        font-size: clamp(28px, 5vw, 40px);
-    }
-
-    .info,
-    .follow,
-    .box_three,
-    .box_three .tit_f,
-    .box_three div:nth-child(2) {
-        margin-left: 0;
-    }
-
-    .info,
-    .follow {
-        margin-top: 0;
-    }
-}
-
-@media (max-width: 600px) {
-    header {
-        position: relative;
-        gap: 12px;
-        padding: 14px 12px;
-    }
-
-    header .two {
-        font-size: 22px;
-    }
-
-    header nav {
+    .first .image_1 img,
+    .second .image_1 img,
+    .second .image_2 img,
+    .third .image img,
+    .team_1 .image img,
+    .car_3 .image img,
+    .driver_2 .image img,
+    .race_1 .image img,
+    .ingred_1 .image img,
+    .ingred_2 .image img,
+    .ingred_3 .image img,
+    .step_1 .image img,
+    .step_2 .image img,
+    .step_3 .image img,
+    .steps_1 .image img {
+        display: block;
         width: 100%;
-        gap: 8px 14px;
-    }
-
-    header nav a {
-        font-size: 14px;
-    }
-
-    .landing,
-    .page_1,
-    .page_2,
-    .page_3,
-    .page_4 {
-        height: 48vh;
-        min-height: 260px;
-        padding: 18px;
-        font-size: clamp(28px, 8vw, 42px);
-    }
-
-    .first,
-    .second,
-    .third,
-    .team_1,
-    .car_3,
-    .driver_2,
-    .race_1,
-    .ingred_1,
-    .ingred_2,
-    .ingred_3,
-    .step_1,
-    .step_2,
-    .step_3,
-    .steps_1 {
-        padding: 26px 16px;
-        gap: 20px;
-    }
-
-    .first .text_1,
-    .first .first_1 .text,
-    .second .text,
-    .third .text,
-    .team_1 .text,
-    .car_3 .text,
-    .driver_2 .text,
-    .race_1 .text,
-    .ingred_1 .text,
-    .ingred_2 .text,
-    .ingred_3 .text,
-    .step_1 .text,
-    .step_2 .text,
-    .step_3 .text,
-    .steps_1 .text {
-        font-size: 16px;
-        gap: 14px;
-    }
-
-    .first .text_1 div:nth-child(2),
-    .first .first_1 .text .one,
-    .second .text .one,
-    .ingred_1 .text .one,
-    .ingred_2 .text .one,
-    .ingred_3 .text .one,
-    .step_1 .text .one,
-    .step_2 .text .one,
-    .step_3 .text .one,
-    .steps_1 .text .one {
-        font-size: clamp(22px, 6vw, 30px);
-    }
-
-    .buttom {
-        margin-left: 0;
+        height: 100%;
+        object-fit: cover;
     }
 
     .type {
         display: flex;
         flex-direction: column;
-        padding: 26px 18px;
-        gap: 26px;
+        align-items: stretch;
+        width: 100%;
+        padding: 24px 16px;
+        gap: 24px;
     }
 
     .type .info,
     .type .follow,
     .type .box_three {
         width: 100%;
-        font-size: 16px;
+        max-width: 100%;
+        margin: 0;
         overflow-wrap: anywhere;
     }
 
-    .type .box_three .tit_f {
-        font-size: 18px;
+    .type .box_three input {
+        max-width: 100%;
     }
 
-    .type .box_three div:nth-child(3) {
-        align-items: stretch;
-    }
-
-    .type .box_three input:nth-child(1) {
-        flex: 1 1 auto;
-        width: 100%;
-        padding: 12px;
-    }
-
-    .type .box_three input:nth-child(2) {
-        padding: 10px 14px;
+    footer {
+        padding: 18px 12px;
     }
 
     footer .rights {
-        font-size: 12px;
+        font-size: 14px;
+        text-align: center;
     }
 }
